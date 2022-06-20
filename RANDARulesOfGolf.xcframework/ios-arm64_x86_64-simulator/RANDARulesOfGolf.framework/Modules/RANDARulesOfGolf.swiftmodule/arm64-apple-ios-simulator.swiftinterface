@@ -1,0 +1,1355 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RANDARulesOfGolf
+import CoreData
+import DTCoreText
+import Foundation
+import PDFKit
+@_exported import RANDARulesOfGolf
+import Swift
+import SwiftSoup
+import UIKit
+import _Concurrency
+public protocol DataConfigurable {
+  associatedtype ViewModel
+  func configure(viewModel: Self.ViewModel?)
+}
+public protocol StyleConfigurable {
+  associatedtype Style
+  func configure(style: Self.Style)
+}
+public protocol TableViewModel {
+  var numberOfSections: Swift.Int { get }
+  func numberOfCells(section: Swift.Int) -> Swift.Int
+  func header(section: Swift.Int) -> RANDARulesOfGolf.CellData?
+  func footer(section: Swift.Int) -> RANDARulesOfGolf.CellData?
+  func cellData(indexPath: Foundation.IndexPath) -> RANDARulesOfGolf.CellData
+  func registerCells(tableView: UIKit.UITableView)
+}
+extension Swift.Collection {
+  public subscript(safe index: Self.Index) -> Self.Element? {
+    get
+  }
+}
+public protocol DecodableInstantiable {
+  static func uniquePredicate(for dto: Any, metadata: [Swift.String : Any]?) -> Foundation.NSPredicate?
+  mutating func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+}
+extension RANDARulesOfGolf.DecodableInstantiable where Self : CoreData.NSManagedObject {
+  @discardableResult
+  public static func findOrCreate(for dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws -> Self
+  public init(with dto: Any?, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+}
+public protocol LocalizableString {
+  var rawValue: Swift.String { get }
+  var bundle: Foundation.Bundle { get }
+}
+public protocol FormattedLocalizableString : RANDARulesOfGolf.LocalizableString {
+  var arguments: [Swift.CVarArg] { get }
+}
+extension RANDARulesOfGolf.LocalizableString {
+  public var localized: Swift.String {
+    get
+  }
+  public func localizedString(forLanguage language: RANDARulesOfGolf.AppLanguage? = nil, arguments: [Swift.CVarArg] = []) -> Swift.String
+}
+@objc @_hasMissingDesignatedInitializers final public class ROGNetworkManager : RANDARulesOfGolf.NetworkManager {
+  @objc deinit
+}
+public enum LoadingMode {
+  case network
+  case storage
+  case storageElseNetwork
+  public static func == (a: RANDARulesOfGolf.LoadingMode, b: RANDARulesOfGolf.LoadingMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+open class StatefulLoader<T> {
+  public var receiveOn: Dispatch.DispatchQueue
+  public init()
+  public enum State {
+    case unloaded
+    case loading
+    case loaded(result: RANDARulesOfGolf.Result<T>)
+  }
+  public var isLoading: Swift.Bool {
+    get
+  }
+  public var hasLoaded: Swift.Bool {
+    get
+  }
+  public var state: RANDARulesOfGolf.StatefulLoader<T>.State {
+    get
+    set
+  }
+  @discardableResult
+  public func onLoading(_ callback: @escaping () -> Swift.Void) -> Self
+  @discardableResult
+  public func onLoaded(_ callback: @escaping (RANDARulesOfGolf.Result<T>) -> Swift.Void) -> Self
+  public func startedLoading()
+  public func didLoad(result: RANDARulesOfGolf.Result<T>)
+  open func load()
+  open func cancel()
+  public func loadOnce()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class AllDefinitionsResponseMapper : RANDARulesOfGolf.DecodableToCoreDataMapper<RANDARulesOfGolf.AllDefinitionsResponse, [RANDARulesOfGolf.Definition]> {
+  override public func processResponse(response: RANDARulesOfGolf.AllDefinitionsResponse, moc: CoreData.NSManagedObjectContext) throws
+  override public init(mocProvider: RANDARulesOfGolf.MOCProvider, metadata: [Swift.String : Any]? = nil)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class ScrollableStackViewController : RANDARulesOfGolf.ROGViewController {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var scrollView: UIKit.UIScrollView!
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var stackView: UIKit.UIStackView!
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class PlainTVHeaderFooterView : UIKit.UITableViewHeaderFooterView, RANDARulesOfGolf.NibLoadableView, RANDARulesOfGolf.DataConfigurable {
+  public struct ViewModel : RANDARulesOfGolf.CellData {
+    public var uid: Any?
+    public init(uid: Any? = nil, title: Swift.String)
+  }
+  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) public func configure(viewModel: RANDARulesOfGolf.PlainTVHeaderFooterView.ViewModel?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension CoreData.NSManagedObjectContext {
+  public func fetchFirst<T>(_ type: T.Type, predicate: Foundation.NSPredicate?) -> T? where T : CoreData.NSManagedObject
+  public func fetchAll<T>(_ type: T.Type, predicate: Foundation.NSPredicate? = nil, sortDescriptors: [Foundation.NSSortDescriptor]? = nil, fetchLimit: Swift.Int? = nil) -> [T] where T : CoreData.NSManagedObject
+  public func countAll<T>(_ type: T.Type, predicate: Foundation.NSPredicate? = nil) -> Swift.Int where T : CoreData.NSManagedObject
+  public func createEntity<T>(_ type: T.Type) -> T where T : CoreData.NSManagedObject
+  public func fetchFirstOrCreate<T>(_ type: T.Type, predicate: Foundation.NSPredicate?) -> T where T : CoreData.NSManagedObject
+  public func deleteOrphans<T>(before: [T]?, after: [T]?) where T : CoreData.NSManagedObject
+  public func drop(entities: [CoreData.NSEntityDescription], storeType: Swift.String)
+  public func saveChanges()
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class RoundedTableViewController : RANDARulesOfGolf.TableViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @objc deinit
+}
+extension RANDARulesOfGolf.Clarification {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Clarification>
+  @objc @NSManaged dynamic public var crossLinkText: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var parent: RANDARulesOfGolf.BaseRuleForm? {
+    @objc get
+    @objc set
+  }
+}
+public protocol ReusableView : AnyObject {
+  static var defaultReuseIdentifier: Swift.String { get }
+}
+extension RANDARulesOfGolf.ReusableView where Self : UIKit.UIView {
+  public static var defaultReuseIdentifier: Swift.String {
+    get
+  }
+}
+extension UIKit.UICollectionReusableView : RANDARulesOfGolf.ReusableView {
+}
+extension UIKit.UITableViewCell : RANDARulesOfGolf.ReusableView {
+}
+extension UIKit.UITableViewHeaderFooterView : RANDARulesOfGolf.ReusableView {
+}
+public protocol NibLoadableView : AnyObject {
+  static var nibName: Swift.String { get }
+  static var nib: UIKit.UINib { get }
+}
+extension RANDARulesOfGolf.NibLoadableView where Self : UIKit.UIView {
+  public static var nibName: Swift.String {
+    get
+  }
+  public static var nib: UIKit.UINib {
+    get
+  }
+}
+extension RANDARulesOfGolf.NibLoadableView where Self : UIKit.UIView {
+  public static func loadFromNib() -> Self
+}
+extension RANDARulesOfGolf.NibLoadableView where Self : UIKit.UIViewController {
+  public static func loadFromNib() -> Self
+}
+extension UIKit.UICollectionView {
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UICollectionViewCell, T : RANDARulesOfGolf.NibLoadableView
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableCell<T>(forIndexPath indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type, forSupplementaryViewOfKind elementKind: Swift.String) where T : UIKit.UICollectionReusableView
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type, forSupplementaryViewOfKind elementKind: Swift.String) where T : UIKit.UICollectionReusableView, T : RANDARulesOfGolf.NibLoadableView
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableSupplementaryViewOfKind<T>(_ elementKind: Swift.String, forIndexPath indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionReusableView
+}
+extension UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UITableViewCell, T : RANDARulesOfGolf.NibLoadableView
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UITableViewHeaderFooterView
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UITableViewHeaderFooterView, T : RANDARulesOfGolf.NibLoadableView
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableCell<T>(forIndexPath indexPath: Foundation.IndexPath) -> T where T : UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableHeaderFooter<T>() -> T where T : UIKit.UITableViewHeaderFooterView
+}
+extension UIKit.UICollectionViewFlowLayout {
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type, forDecorationViewOfKind elementKind: Swift.String) where T : UIKit.UICollectionReusableView, T : RANDARulesOfGolf.NibLoadableView
+}
+public protocol ViewFromNib {
+  var nibName: Swift.String { get }
+  var view: UIKit.UIView! { get set }
+}
+extension RANDARulesOfGolf.ViewFromNib where Self : UIKit.UIView {
+  public var nibName: Swift.String {
+    get
+  }
+  public func xibSetup()
+  public func loadViewFromNib() -> UIKit.UIView
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public static func loadFromNib(nibName: Swift.String) -> UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public static func loadFromNib() -> UIKit.UIView
+}
+extension RANDARulesOfGolf.Language {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Language>
+  @objc @NSManaged dynamic public var displayName: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var englishName: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension RANDARulesOfGolf.Language : Swift.Identifiable {
+  public typealias ID = Swift.ObjectIdentifier
+}
+@_inheritsConvenienceInitializers @objc(BaseRandaEntity) public class BaseRandaEntity : CoreData.NSManagedObject, RANDARulesOfGolf.DecodableInstantiable {
+  public static func uniquePredicate(for dto: Any, metadata: [Swift.String : Any]?) -> Foundation.NSPredicate?
+  open func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension RANDARulesOfGolf.BaseRuleForm {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.BaseRuleForm>
+  @objc @NSManaged dynamic public var codename: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var desc: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var edition: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var floatFullNumber: Swift.Float {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var number: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var clarifications: Foundation.NSOrderedSet? {
+    @objc get
+    @objc set
+  }
+}
+extension RANDARulesOfGolf.BaseRuleForm {
+  @objc(insertObject:inClarificationsAtIndex:) @NSManaged dynamic public func insertIntoClarifications(_ value: RANDARulesOfGolf.Clarification, at idx: Swift.Int)
+  @objc(removeObjectFromClarificationsAtIndex:) @NSManaged dynamic public func removeFromClarifications(at idx: Swift.Int)
+  @objc(insertClarifications:atIndexes:) @NSManaged dynamic public func insertIntoClarifications(_ values: [RANDARulesOfGolf.Clarification], at indexes: Foundation.NSIndexSet)
+  @objc(removeClarificationsAtIndexes:) @NSManaged dynamic public func removeFromClarifications(at indexes: Foundation.NSIndexSet)
+  @objc(replaceObjectInClarificationsAtIndex:withObject:) @NSManaged dynamic public func replaceClarifications(at idx: Swift.Int, with value: RANDARulesOfGolf.Clarification)
+  @objc(replaceClarificationsAtIndexes:withClarifications:) @NSManaged dynamic public func replaceClarifications(at indexes: Foundation.NSIndexSet, with values: [RANDARulesOfGolf.Clarification])
+  @objc(addClarificationsObject:) @NSManaged dynamic public func addToClarifications(_ value: RANDARulesOfGolf.Clarification)
+  @objc(removeClarificationsObject:) @NSManaged dynamic public func removeFromClarifications(_ value: RANDARulesOfGolf.Clarification)
+  @objc(addClarifications:) @NSManaged dynamic public func addToClarifications(_ values: Foundation.NSOrderedSet)
+  @objc(removeClarifications:) @NSManaged dynamic public func removeFromClarifications(_ values: Foundation.NSOrderedSet)
+}
+public protocol DecoderProtocol {
+  associatedtype O
+  func decode(data: Foundation.Data?) throws -> Self.O?
+}
+public struct AnyDecoder<A> : RANDARulesOfGolf.DecoderProtocol {
+  public init<D>(_ decoder: D) where A == D.O, D : RANDARulesOfGolf.DecoderProtocol
+  public func decode(data: Foundation.Data?) throws -> A?
+  public typealias O = A
+}
+@_inheritsConvenienceInitializers @objc(Subrule) public class Subrule : RANDARulesOfGolf.BaseRuleForm {
+  override open func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+public protocol CellData {
+  var uid: Any? { get set }
+}
+@_inheritsConvenienceInitializers @objc(BaseRuleForm) public class BaseRuleForm : RANDARulesOfGolf.BaseRandaEntity {
+  override open func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(Answer) public class Answer : CoreData.NSManagedObject, RANDARulesOfGolf.DecodableInstantiable {
+  public static func uniquePredicate(for dto: Any, metadata: [Swift.String : Any]?) -> Foundation.NSPredicate?
+  public func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+public protocol CanPresentAlerts {
+  var presenter: UIKit.UIViewController? { get }
+  func presentAlert(title: Swift.String?, message: Swift.String?, style: RANDARulesOfGolf.AlertStyle, actions: [RANDARulesOfGolf.AlertAction], animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  func presentAlert(title: Swift.String?, message: Swift.String?, style: RANDARulesOfGolf.AlertStyle, actions: [RANDARulesOfGolf.AlertAction], animated: Swift.Bool)
+  func presentInfoAlert(title: Swift.String, message: Swift.String, dismissTitle: Swift.String)
+}
+public struct AlertAction {
+  public enum Style {
+    case normal, destructive, cancel
+    public static func == (a: RANDARulesOfGolf.AlertAction.Style, b: RANDARulesOfGolf.AlertAction.Style) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(title: Swift.String, style: RANDARulesOfGolf.AlertAction.Style, isEnabled: Swift.Bool = true, handler: (() -> Swift.Void)?)
+}
+public enum AlertStyle {
+  case alert, actionSheet
+  public static func == (a: RANDARulesOfGolf.AlertStyle, b: RANDARulesOfGolf.AlertStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension RANDARulesOfGolf.CanPresentAlerts {
+  public func presentAlert(title: Swift.String?, message: Swift.String?, style: RANDARulesOfGolf.AlertStyle, actions: [RANDARulesOfGolf.AlertAction], animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  public func presentAlert(title: Swift.String?, message: Swift.String?, style: RANDARulesOfGolf.AlertStyle, actions: [RANDARulesOfGolf.AlertAction], animated: Swift.Bool)
+  public func presentInfoAlert(title: Swift.String, message: Swift.String, dismissTitle: Swift.String)
+  public func presentActionAlert(title: Swift.String, message: Swift.String, cancelTitle: Swift.String, actionTitle: Swift.String, action: @escaping () -> ())
+  public func presentDeleteAlert(title: Swift.String, message: Swift.String, cancelTitle: Swift.String, actionTitle: Swift.String, action: @escaping () -> ())
+  public func presentErrorAlert(title: Swift.String, message: Swift.String, shouldRetry: Swift.Bool, cancelTitle: Swift.String, acceptTitle: Swift.String, retryTitle: Swift.String, action: (() -> ())?, retryAction: (() -> ())?)
+}
+extension RANDARulesOfGolf.CanPresentAlerts where Self : UIKit.UIViewController {
+  public var presenter: UIKit.UIViewController? {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc(CommitteeProcedure) public class CommitteeProcedure : RANDARulesOfGolf.Rule {
+  override open func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(Video) public class Video : CoreData.NSManagedObject, RANDARulesOfGolf.DecodableInstantiable {
+  public static func uniquePredicate(for dto: Any, metadata: [Swift.String : Any]?) -> Foundation.NSPredicate?
+  public func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ROGBrowserNavigationController : UIKit.UINavigationController {
+  @objc dynamic public init()
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @objc deinit
+}
+public struct AllDefinitionsResponse : Swift.Decodable {
+  public struct Item : Swift.Decodable {
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+open class DataRequest<R> : RANDARulesOfGolf.StatefulLoader<R> {
+  public init(urlSession: Foundation.URLSession, request: RANDARulesOfGolf.Request, decoder: RANDARulesOfGolf.AnyDecoder<R>)
+  override open func load()
+  public func loadFromStorageElseNetwork()
+  @objc deinit
+}
+public struct AllRulesResponse : Swift.Decodable {
+  public struct Item : Swift.Decodable {
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc(Definition) public class Definition : RANDARulesOfGolf.BaseRandaEntity {
+  override open func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+public enum CloudMatrixEndpoints : RANDARulesOfGolf.Endpoint {
+  case videos(entryId: Swift.String)
+  public var path: Swift.String {
+    get
+  }
+}
+extension RANDARulesOfGolf.Definition {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Definition>
+  @objc @NSManaged dynamic public var desc: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lastUpdated: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+public struct CloudMatrixAPI : RANDARulesOfGolf.API {
+  public let baseURL: Swift.String
+  public func request(httpMethod: RANDARulesOfGolf.HTTPMethod = .get, endpoint: RANDARulesOfGolf.CloudMatrixEndpoints, queryParameters: Swift.Encodable? = nil, body: Swift.Encodable? = nil) -> RANDARulesOfGolf.Request
+}
+@objc @_Concurrency.MainActor(unsafe) open class TableViewController : RANDARulesOfGolf.ROGViewController, RANDARulesOfGolf.DataConfigurable {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var stackView: UIKit.UIStackView!
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var tableView: UIKit.UITableView! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public init(style: UIKit.UITableView.Style = .grouped, nibName: Swift.String? = nil, bundle: Foundation.Bundle? = nil)
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func configure(viewModel: RANDARulesOfGolf.TableViewModel?)
+  @_Concurrency.MainActor(unsafe) public func uid(at indexPath: Foundation.IndexPath) -> Any?
+  @_Concurrency.MainActor(unsafe) open func didSelectRowWith(uid: Any)
+  public typealias ViewModel = RANDARulesOfGolf.TableViewModel
+  @objc deinit
+}
+extension RANDARulesOfGolf.TableViewController : UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, estimatedHeightForHeaderInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, heightForFooterInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, estimatedHeightForFooterInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, viewForFooterInSection section: Swift.Int) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+}
+extension RANDARulesOfGolf.TableViewController : UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func tableView(_ tableView: UIKit.UITableView, shouldHighlightRowAt indexPath: Foundation.IndexPath) -> Swift.Bool
+}
+@_inheritsConvenienceInitializers @objc(Language) public class Language : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension UIKit.UIBarButtonItem {
+  @_Concurrency.MainActor(unsafe) public class func closeButton(target: Any?, action: ObjectiveC.Selector?) -> UIKit.UIBarButtonItem
+}
+public enum Result<Value> {
+  case success(Value?)
+  case failure(Swift.Error)
+  public var value: Value? {
+    get
+  }
+}
+public struct ROGTheme {
+  public static func color(_ style: RANDARulesOfGolf.ROGTheme.ColorStyle) -> UIKit.UIColor
+  public static func font(_ style: RANDARulesOfGolf.ROGTheme.FontStyle, fixedSize: Swift.Bool = false) -> UIKit.UIFont
+  public static func image(_ image: RANDARulesOfGolf.ROGTheme.Image, userInterfaceStyle: UIKit.UIUserInterfaceStyle? = nil) -> UIKit.UIImage?
+}
+@_inheritsConvenienceInitializers @objc(Section) public class Section : RANDARulesOfGolf.BaseRuleForm {
+  override open func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+public enum RadikalFonts : Swift.String, Swift.CaseIterable {
+  case bold
+  case boldItalic
+  case medium
+  case mediumItalic
+  case regular
+  case regularItalic
+  case light
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [RANDARulesOfGolf.RadikalFonts]
+  public typealias RawValue = Swift.String
+  public static var allCases: [RANDARulesOfGolf.RadikalFonts] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension RANDARulesOfGolf.ROGTheme {
+  public enum FontStyle : Swift.CaseIterable {
+    case bold42
+    case bold34
+    case medium28
+    case bold22
+    case medium22
+    case bold20
+    case medium20
+    case bold17
+    case light17
+    case boldItalic17
+    case boldItalic15
+    case medium17
+    case bold15
+    case medium15
+    case regular15
+    case regular17
+    case bold13
+    case light13
+    case bold12
+    case medium10
+    public static func == (a: RANDARulesOfGolf.ROGTheme.FontStyle, b: RANDARulesOfGolf.ROGTheme.FontStyle) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [RANDARulesOfGolf.ROGTheme.FontStyle]
+    public static var allCases: [RANDARulesOfGolf.ROGTheme.FontStyle] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class NumberedTVCell : UIKit.UITableViewCell, RANDARulesOfGolf.NibLoadableView, RANDARulesOfGolf.DataConfigurable {
+  public enum Style {
+    case rule, subrule, section, definition, committeeProcedure, subCommitteeProcedure
+    public static func == (a: RANDARulesOfGolf.NumberedTVCell.Style, b: RANDARulesOfGolf.NumberedTVCell.Style) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct ViewModel : RANDARulesOfGolf.CellData {
+    public var uid: Any?
+    public init(uid: Any? = nil, number: Swift.String?, title: Swift.String?, style: RANDARulesOfGolf.NumberedTVCell.Style)
+  }
+  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) public func configure(viewModel: RANDARulesOfGolf.NumberedTVCell.ViewModel?)
+  @available(iOS 3.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension RANDARulesOfGolf.NumberedTVCell : RANDARulesOfGolf.StyleConfigurable {
+  @_Concurrency.MainActor(unsafe) public func configure(style: RANDARulesOfGolf.NumberedTVCell.Style)
+}
+extension RANDARulesOfGolf.Section {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Section>
+  @objc @NSManaged dynamic public var crossLinkText: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var parent: RANDARulesOfGolf.Subrule? {
+    @objc get
+    @objc set
+  }
+}
+extension UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) public func setHeaderHeight()
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func load(url: Foundation.URL)
+}
+public enum ButtonStyle {
+  case primary
+  case rounded(image: UIKit.UIImage? = nil, imagePlacement: UIKit.NSDirectionalRectEdge = .leading)
+  case text(image: UIKit.UIImage? = nil, imagePlacement: UIKit.NSDirectionalRectEdge = .leading)
+}
+extension UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public func configure(withTitle title: Swift.String?, andStyle style: RANDARulesOfGolf.ButtonStyle)
+}
+public enum KenticoEndpoints : RANDARulesOfGolf.Endpoint {
+  case items(projectID: Swift.String)
+  public var path: Swift.String {
+    get
+  }
+}
+public protocol MOCProvider {
+  var viewContext: CoreData.NSManagedObjectContext { get }
+  var newBackgroundContext: CoreData.NSManagedObjectContext { get }
+}
+@_hasMissingDesignatedInitializers public class DataManager {
+  final public let viewContext: CoreData.NSManagedObjectContext
+  public static let shared: RANDARulesOfGolf.DataManager
+  final public let kenticoAPI: RANDARulesOfGolf.KenticoAPI
+  final public let cloudMatrixAPI: RANDARulesOfGolf.CloudMatrixAPI
+  @objc deinit
+}
+extension RANDARulesOfGolf.DataManager : RANDARulesOfGolf.MOCProvider {
+  public var newBackgroundContext: CoreData.NSManagedObjectContext {
+    get
+  }
+}
+@_inheritsConvenienceInitializers public class QuizResponseMapper : RANDARulesOfGolf.DecodableToCoreDataMapper<RANDARulesOfGolf.AllQuizResponse.Item, RANDARulesOfGolf.Quiz> {
+  override public func processResponse(response: RANDARulesOfGolf.AllQuizResponse.Item, moc: CoreData.NSManagedObjectContext) throws
+  override public init(mocProvider: RANDARulesOfGolf.MOCProvider, metadata: [Swift.String : Any]? = nil)
+  @objc deinit
+}
+public enum HTTPMethod : Swift.String {
+  case get
+  case post
+  case put
+  case delete
+  case patch
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public typealias HTTPHeaders = [Swift.String : Swift.String]
+public enum ContentType {
+}
+public struct Request {
+  public init(baseURL: Swift.String, httpMethod: RANDARulesOfGolf.HTTPMethod, endpoint: RANDARulesOfGolf.Endpoint, queryParameters: Swift.Encodable?, httpHeaders: RANDARulesOfGolf.HTTPHeaders, body: Swift.Encodable?)
+}
+extension RANDARulesOfGolf.TableViewController {
+  public struct TVModel {
+    public var sections: [RANDARulesOfGolf.TableViewController.TVSection]
+    public init(sections: [RANDARulesOfGolf.TableViewController.TVSection])
+  }
+  public struct TVSection {
+    public var uid: Any?
+    public var header: RANDARulesOfGolf.CellData?
+    public var cells: [RANDARulesOfGolf.CellData]
+    public var footer: RANDARulesOfGolf.CellData?
+    public init(uid: Any? = nil, header: RANDARulesOfGolf.CellData? = nil, cells: [RANDARulesOfGolf.CellData], footer: RANDARulesOfGolf.CellData? = nil)
+  }
+}
+extension RANDARulesOfGolf.TableViewController.TVModel : RANDARulesOfGolf.TableViewModel {
+  public var numberOfSections: Swift.Int {
+    get
+  }
+  public func numberOfCells(section: Swift.Int) -> Swift.Int
+  public func header(section: Swift.Int) -> RANDARulesOfGolf.CellData?
+  public func footer(section: Swift.Int) -> RANDARulesOfGolf.CellData?
+  public func cellData(indexPath: Foundation.IndexPath) -> RANDARulesOfGolf.CellData
+  public func registerCells(tableView: UIKit.UITableView)
+}
+public enum AppLanguage : Swift.String, Swift.CaseIterable {
+  case english
+  case czech
+  case dutch
+  case finnish
+  case danish
+  case german
+  case hungarian
+  case icelandic
+  case indonesian
+  case japanese
+  case korean
+  case norwegian
+  case portuguese
+  case chinese
+  case vietnamese
+  case swedish
+  case french
+  case spanish
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [RANDARulesOfGolf.AppLanguage]
+  public typealias RawValue = Swift.String
+  public static var allCases: [RANDARulesOfGolf.AppLanguage] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension RANDARulesOfGolf.AppLanguage {
+  public var name: Swift.String {
+    get
+  }
+  public static var current: RANDARulesOfGolf.AppLanguage {
+    get
+  }
+}
+public struct AllVideosResponse : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ROGLearnNavigationController : UIKit.UINavigationController, RANDARulesOfGolf.CanPresentAlerts {
+  @_Concurrency.MainActor(unsafe) public var childCoordinators: [RANDARulesOfGolf.Coordinator]
+  @_Concurrency.MainActor(unsafe) public init(dataManager: RANDARulesOfGolf.DataManager = .shared)
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @objc deinit
+}
+public protocol RuleBrowserViewControllerDelegate : AnyObject {
+}
+@_inheritsConvenienceInitializers public class AllRulesResponseMapper : RANDARulesOfGolf.DecodableToCoreDataMapper<RANDARulesOfGolf.AllRulesResponse, [RANDARulesOfGolf.Rule]> {
+  override public func processResponse(response: RANDARulesOfGolf.AllRulesResponse, moc: CoreData.NSManagedObjectContext) throws
+  override public init(mocProvider: RANDARulesOfGolf.MOCProvider, metadata: [Swift.String : Any]? = nil)
+  @objc deinit
+}
+public let DefaultPDFFileName: Swift.String
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class TextViewController : RANDARulesOfGolf.ROGViewController {
+  public struct ViewModel {
+    public init(title: Swift.String?, text: Swift.String?)
+  }
+  @_Concurrency.MainActor(unsafe) public init(viewModel: RANDARulesOfGolf.TextViewController.ViewModel)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+extension RANDARulesOfGolf.ROGTheme {
+  public enum ColorStyle : Swift.String, Swift.CaseIterable {
+    case backgroundPrimary
+    case backgroundSecondary
+    case backgroundPrimaryVarient
+    case backgroundSecondaryVarient
+    case textPrimary
+    case textSecondary
+    case textSecondaryLight
+    case lightColoursSecondary
+    case backgroundBigCard
+    case backgroundSmallCard
+    case separator
+    case tintColor
+    case backgroundNavigationBar
+    case textTertiary
+    case textPrimaryLight
+    case onTint
+    case onSecondaryTint
+    case tintVarient
+    case tintRed
+    case tintGreen
+    case disabledBackground
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [RANDARulesOfGolf.ROGTheme.ColorStyle]
+    public typealias RawValue = Swift.String
+    public static var allCases: [RANDARulesOfGolf.ROGTheme.ColorStyle] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+@_inheritsConvenienceInitializers @objc(Quiz) public class Quiz : CoreData.NSManagedObject, RANDARulesOfGolf.DecodableInstantiable {
+  public static func uniquePredicate(for dto: Any, metadata: [Swift.String : Any]?) -> Foundation.NSPredicate?
+  public func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class AllVideosResponseMapper : RANDARulesOfGolf.DecodableToCoreDataMapper<RANDARulesOfGolf.AllVideosResponse, [RANDARulesOfGolf.Video]> {
+  override public func processResponse(response: RANDARulesOfGolf.AllVideosResponse, moc: CoreData.NSManagedObjectContext) throws
+  override public init(mocProvider: RANDARulesOfGolf.MOCProvider, metadata: [Swift.String : Any]? = nil)
+  @objc deinit
+}
+public enum QuizDifficulty : Swift.String {
+  case advanced
+  case beginner
+  case intermediate
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ImageTVCell : UIKit.UITableViewCell, RANDARulesOfGolf.NibLoadableView, RANDARulesOfGolf.DataConfigurable {
+  public struct ViewModel : RANDARulesOfGolf.CellData {
+    public var uid: Any?
+    public init(uid: Any? = nil, title: Swift.String?, subtitle: Swift.String?, image: UIKit.UIImage?)
+  }
+  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) public func configure(viewModel: RANDARulesOfGolf.ImageTVCell.ViewModel?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func prepareForReuse()
+  @available(iOS 3.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func roundCorners(_ corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
+}
+extension RANDARulesOfGolf.CommitteeProcedure {
+  @objc @NSManaged dynamic public var committeeParentNumber: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.CommitteeProcedure>
+}
+public struct KenticoAPI : RANDARulesOfGolf.API {
+  public let baseURL: Swift.String
+  public func request(httpMethod: RANDARulesOfGolf.HTTPMethod = .get, endpoint: RANDARulesOfGolf.KenticoEndpoints, queryParameters: Swift.Encodable? = nil, body: Swift.Encodable? = nil) -> RANDARulesOfGolf.Request
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SimpleTVCell : UIKit.UITableViewCell, RANDARulesOfGolf.NibLoadableView, RANDARulesOfGolf.DataConfigurable {
+  public struct ViewModel : RANDARulesOfGolf.CellData {
+    public var uid: Any?
+    public init(uid: Any? = nil, title: Swift.String?, subtitle: Swift.String? = nil, buttonTitle: Swift.String? = nil, buttonBlock: ((UIKit.UIButton) -> Swift.Void)? = nil, accessoryType: UIKit.UITableViewCell.AccessoryType? = nil)
+  }
+  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) public func configure(viewModel: RANDARulesOfGolf.SimpleTVCell.ViewModel?)
+  @available(iOS 3.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ROGViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class ROGJSONDecoder : Foundation.JSONDecoder {
+  open func decodeIfPresent<T>(_ type: T.Type, from data: Foundation.Data) -> T? where T : Swift.Decodable
+  @objc deinit
+}
+public enum FLS {
+  case hello(name: Swift.String)
+  case quizQuestionNumberFormat(number: Swift.Int, total: Swift.Int)
+  case quizQuestionBackFormat(number: Swift.Int)
+  case quizQuestionIncorrectAnswerFormat(letter: Swift.String)
+  case quizChooseLengthAlertButtonFormat(number: Swift.Int)
+}
+extension RANDARulesOfGolf.FLS : RANDARulesOfGolf.FormattedLocalizableString, Swift.CaseIterable {
+  public var bundle: Foundation.Bundle {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+  public var arguments: [Swift.CVarArg] {
+    get
+  }
+  public static var allCases: [RANDARulesOfGolf.FLS] {
+    get
+  }
+  public typealias AllCases = [RANDARulesOfGolf.FLS]
+}
+@_inheritsConvenienceInitializers @objc(Rule) public class Rule : RANDARulesOfGolf.BaseRuleForm {
+  override open func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+public enum ROGError : Foundation.LocalizedError {
+  case decodingFailed
+  public static func == (a: RANDARulesOfGolf.ROGError, b: RANDARulesOfGolf.ROGError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension RANDARulesOfGolf.BaseRandaEntity {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.BaseRandaEntity>
+  @objc @NSManaged dynamic public var guid: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension RANDARulesOfGolf.BaseRandaEntity : Swift.Identifiable {
+  public typealias ID = Swift.ObjectIdentifier
+}
+@_inheritsConvenienceInitializers @objc(Clarification) public class Clarification : RANDARulesOfGolf.BaseRuleForm {
+  override open func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension RANDARulesOfGolf.Quiz {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Quiz>
+  @objc @NSManaged dynamic public var codename: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var difficulty: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var language: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lastModified: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var questions: Foundation.NSSet? {
+    @objc get
+    @objc set
+  }
+}
+extension RANDARulesOfGolf.Quiz {
+  @objc(addQuestionsObject:) @NSManaged dynamic public func addToQuestions(_ value: RANDARulesOfGolf.Question)
+  @objc(removeQuestionsObject:) @NSManaged dynamic public func removeFromQuestions(_ value: RANDARulesOfGolf.Question)
+  @objc(addQuestions:) @NSManaged dynamic public func addToQuestions(_ values: Foundation.NSSet)
+  @objc(removeQuestions:) @NSManaged dynamic public func removeFromQuestions(_ values: Foundation.NSSet)
+}
+extension RANDARulesOfGolf.Quiz : Swift.Identifiable {
+  public typealias ID = Swift.ObjectIdentifier
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static var isIPad: Swift.Bool {
+    get
+  }
+}
+public protocol Coordinator {
+  var rootController: UIKit.UIViewController { get }
+  var childCoordinators: [RANDARulesOfGolf.Coordinator] { get set }
+}
+extension RANDARulesOfGolf.DataManager {
+  public func getAllQuizDataRequest() -> RANDARulesOfGolf.FetchedCollectionDataRequest<[RANDARulesOfGolf.Quiz]>
+  public func getQuiz(difficulty: RANDARulesOfGolf.QuizDifficulty) -> RANDARulesOfGolf.FetchedDataRequest<RANDARulesOfGolf.Quiz>
+  public func getAllVideosDataRequest() -> RANDARulesOfGolf.FetchedCollectionDataRequest<[RANDARulesOfGolf.Video]>
+}
+public struct AllQuizResponse : Swift.Decodable {
+  public struct Item : Swift.Decodable {
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+open class FetchedDataRequest<R> : RANDARulesOfGolf.DataRequest<R> where R : CoreData.NSManagedObject {
+  public init(urlSession: Foundation.URLSession, request: RANDARulesOfGolf.Request, decoder: RANDARulesOfGolf.AnyDecoder<R>, fetchRequest: CoreData.NSFetchRequest<R>, viewMoc: CoreData.NSManagedObjectContext)
+  override public func loadFromStorageElseNetwork()
+  public func fetchResults() -> R?
+  @objc deinit
+}
+open class FetchedCollectionDataRequest<C> : RANDARulesOfGolf.DataRequest<C> where C : Swift.Collection, C.Element : CoreData.NSManagedObject {
+  public typealias E = C.Iterator.Element
+  public init(urlSession: Foundation.URLSession, request: RANDARulesOfGolf.Request, decoder: RANDARulesOfGolf.AnyDecoder<C>, fetchRequest: CoreData.NSFetchRequest<RANDARulesOfGolf.FetchedCollectionDataRequest<C>.E>, viewMoc: CoreData.NSManagedObjectContext)
+  override public func loadFromStorageElseNetwork()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class NetworkManager : ObjectiveC.NSObject {
+  public var urlSession: Foundation.URLSession {
+    get
+    set
+  }
+  @discardableResult
+  public func perform<T>(request: RANDARulesOfGolf.Request, receiveOn: Dispatch.DispatchQueue = .main, completion: @escaping (RANDARulesOfGolf.Result<T>) -> Swift.Void) -> Foundation.URLSessionDataTask? where T : Swift.Decodable
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension RANDARulesOfGolf.NetworkManager : Foundation.URLSessionDataDelegate {
+}
+open class DecodableToCoreDataMapper<R, C> : RANDARulesOfGolf.DecoderProtocol where R : Swift.Decodable {
+  public init(mocProvider: RANDARulesOfGolf.MOCProvider, metadata: [Swift.String : Any]? = nil)
+  public func decode(data: Foundation.Data?) throws -> C?
+  public func decode(response: R) throws -> C?
+  open func processResponse(response: R, moc: CoreData.NSManagedObjectContext) throws
+  open func fetchResults() throws -> C?
+  public typealias O = C
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(Question) public class Question : CoreData.NSManagedObject, RANDARulesOfGolf.DecodableInstantiable {
+  public static func uniquePredicate(for dto: Any, metadata: [Swift.String : Any]?) -> Foundation.NSPredicate?
+  public func update(from dto: Any, metadata: [Swift.String : Any]?, in context: CoreData.NSManagedObjectContext) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension RANDARulesOfGolf.Answer {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Answer>
+  @objc @NSManaged dynamic public var codename: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var isCorrect: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var language: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lastModified: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var position: Swift.Int16 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var text: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var question: Foundation.NSSet? {
+    @objc get
+    @objc set
+  }
+}
+extension RANDARulesOfGolf.Answer {
+  @objc(addQuestionObject:) @NSManaged dynamic public func addToQuestion(_ value: RANDARulesOfGolf.Question)
+  @objc(removeQuestionObject:) @NSManaged dynamic public func removeFromQuestion(_ value: RANDARulesOfGolf.Question)
+  @objc(addQuestion:) @NSManaged dynamic public func addToQuestion(_ values: Foundation.NSSet)
+  @objc(removeQuestion:) @NSManaged dynamic public func removeFromQuestion(_ values: Foundation.NSSet)
+}
+extension RANDARulesOfGolf.Answer : Swift.Identifiable {
+  public typealias ID = Swift.ObjectIdentifier
+}
+extension RANDARulesOfGolf.Subrule {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Subrule>
+  @objc @NSManaged dynamic public var purposeStatement: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var parent: RANDARulesOfGolf.Rule? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var sections: Foundation.NSOrderedSet? {
+    @objc get
+    @objc set
+  }
+}
+extension RANDARulesOfGolf.Subrule {
+  @objc(insertObject:inSectionsAtIndex:) @NSManaged dynamic public func insertIntoSections(_ value: RANDARulesOfGolf.Section, at idx: Swift.Int)
+  @objc(removeObjectFromSectionsAtIndex:) @NSManaged dynamic public func removeFromSections(at idx: Swift.Int)
+  @objc(insertSections:atIndexes:) @NSManaged dynamic public func insertIntoSections(_ values: [RANDARulesOfGolf.Section], at indexes: Foundation.NSIndexSet)
+  @objc(removeSectionsAtIndexes:) @NSManaged dynamic public func removeFromSections(at indexes: Foundation.NSIndexSet)
+  @objc(replaceObjectInSectionsAtIndex:withObject:) @NSManaged dynamic public func replaceSections(at idx: Swift.Int, with value: RANDARulesOfGolf.Section)
+  @objc(replaceSectionsAtIndexes:withSections:) @NSManaged dynamic public func replaceSections(at indexes: Foundation.NSIndexSet, with values: [RANDARulesOfGolf.Section])
+  @objc(addSectionsObject:) @NSManaged dynamic public func addToSections(_ value: RANDARulesOfGolf.Section)
+  @objc(removeSectionsObject:) @NSManaged dynamic public func removeFromSections(_ value: RANDARulesOfGolf.Section)
+  @objc(addSections:) @NSManaged dynamic public func addToSections(_ values: Foundation.NSOrderedSet)
+  @objc(removeSections:) @NSManaged dynamic public func removeFromSections(_ values: Foundation.NSOrderedSet)
+}
+extension RANDARulesOfGolf.Rule {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Rule>
+  @objc @NSManaged dynamic public var lastUpdated: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var nextClarificationCodename: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var nextRuleCodename: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var previousClarificationCodename: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var previousRuleCodename: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var purposeStatement: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var subrules: Foundation.NSOrderedSet? {
+    @objc get
+    @objc set
+  }
+}
+extension RANDARulesOfGolf.Rule {
+  @objc(insertObject:inSubrulesAtIndex:) @NSManaged dynamic public func insertIntoSubrules(_ value: RANDARulesOfGolf.Subrule, at idx: Swift.Int)
+  @objc(removeObjectFromSubrulesAtIndex:) @NSManaged dynamic public func removeFromSubrules(at idx: Swift.Int)
+  @objc(insertSubrules:atIndexes:) @NSManaged dynamic public func insertIntoSubrules(_ values: [RANDARulesOfGolf.Subrule], at indexes: Foundation.NSIndexSet)
+  @objc(removeSubrulesAtIndexes:) @NSManaged dynamic public func removeFromSubrules(at indexes: Foundation.NSIndexSet)
+  @objc(replaceObjectInSubrulesAtIndex:withObject:) @NSManaged dynamic public func replaceSubrules(at idx: Swift.Int, with value: RANDARulesOfGolf.Subrule)
+  @objc(replaceSubrulesAtIndexes:withSubrules:) @NSManaged dynamic public func replaceSubrules(at indexes: Foundation.NSIndexSet, with values: [RANDARulesOfGolf.Subrule])
+  @objc(addSubrulesObject:) @NSManaged dynamic public func addToSubrules(_ value: RANDARulesOfGolf.Subrule)
+  @objc(removeSubrulesObject:) @NSManaged dynamic public func removeFromSubrules(_ value: RANDARulesOfGolf.Subrule)
+  @objc(addSubrules:) @NSManaged dynamic public func addToSubrules(_ values: Foundation.NSOrderedSet)
+  @objc(removeSubrules:) @NSManaged dynamic public func removeFromSubrules(_ values: Foundation.NSOrderedSet)
+}
+extension RANDARulesOfGolf.Video {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Video>
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var contentseries: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var entryId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var thumbnailUrl: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var year: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var duration: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+}
+extension Swift.Int {
+  public var stringValue: Swift.String {
+    get
+  }
+}
+extension Swift.Int16 {
+  public var stringValue: Swift.String {
+    get
+  }
+}
+extension Swift.Int32 {
+  public var stringValue: Swift.String {
+    get
+  }
+}
+extension Swift.Int64 {
+  public var stringValue: Swift.String {
+    get
+  }
+}
+public func log_debug(_ message: Any)
+public func log_info(_ message: Any)
+public func log_warning(_ message: Any)
+public func log_error(_ message: Any)
+public func log_network_request(_ message: Any)
+public func log_network_response(_ message: Any)
+@_inheritsConvenienceInitializers public class AllCommitteeProceduresResponseMapper : RANDARulesOfGolf.DecodableToCoreDataMapper<RANDARulesOfGolf.AllRulesResponse, [RANDARulesOfGolf.CommitteeProcedure]> {
+  override public func processResponse(response: RANDARulesOfGolf.AllRulesResponse, moc: CoreData.NSManagedObjectContext) throws
+  override public init(mocProvider: RANDARulesOfGolf.MOCProvider, metadata: [Swift.String : Any]? = nil)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class AllQuizzesResponseMapper : RANDARulesOfGolf.DecodableToCoreDataMapper<RANDARulesOfGolf.AllQuizResponse, [RANDARulesOfGolf.Quiz]> {
+  override public func processResponse(response: RANDARulesOfGolf.AllQuizResponse, moc: CoreData.NSManagedObjectContext) throws
+  override public init(mocProvider: RANDARulesOfGolf.MOCProvider, metadata: [Swift.String : Any]? = nil)
+  @objc deinit
+}
+extension RANDARulesOfGolf.Question {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<RANDARulesOfGolf.Question>
+  @objc @NSManaged dynamic public var codename: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var explanation: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var imageURL: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var language: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lastModified: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var text: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var answers: Foundation.NSSet? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var quiz: RANDARulesOfGolf.Quiz? {
+    @objc get
+    @objc set
+  }
+}
+extension RANDARulesOfGolf.Question {
+  @objc(addAnswersObject:) @NSManaged dynamic public func addToAnswers(_ value: RANDARulesOfGolf.Answer)
+  @objc(removeAnswersObject:) @NSManaged dynamic public func removeFromAnswers(_ value: RANDARulesOfGolf.Answer)
+  @objc(addAnswers:) @NSManaged dynamic public func addToAnswers(_ values: Foundation.NSSet)
+  @objc(removeAnswers:) @NSManaged dynamic public func removeFromAnswers(_ values: Foundation.NSSet)
+}
+extension RANDARulesOfGolf.Question : Swift.Identifiable {
+  public typealias ID = Swift.ObjectIdentifier
+}
+public protocol API {
+  var baseURL: Swift.String { get }
+}
+public protocol Endpoint {
+  var path: Swift.String { get }
+}
+public enum LS : Swift.String, Swift.CaseIterable {
+  case lang
+  case check
+  case next
+  case cancel
+  case beginner
+  case intermediate
+  case advanced
+  case yes
+  case no
+  case seeAll
+  case tabLearn
+  case learnQuickGuide
+  case learnWatchVideosTitle
+  case learnWatchVideosSubtitle
+  case learnTakeQuizTitle
+  case learnTakeQuizSubtitle
+  case learnTakeBeginnerQuizTitle
+  case learnChooseDifficultyQuizTitle
+  case learnHandicapCalculatorTitle
+  case learnHandicapCalculatorSubtitle
+  case learnAdditionalResourcesTitle
+  case learnRulesAcademyTitle
+  case quizNavigationTitle
+  case quizBeginnerTitle
+  case quizBeginnerDescription
+  case quizIntermediateTitle
+  case quizIntermediateDescription
+  case quizAdvancedTitle
+  case quizAdvancedDescription
+  case quizQuestionExplanationTitle
+  case quizQuestionCorrectAnswer
+  case quizChooseLengthAlertTitle
+  case quizResultViewAnswersButtonTitle
+  case quizYourAnswerTitle
+  case quizResultYourResultTitle
+  case quizResultTakeAnotherTitle
+  case quizReviewAnswersAnswerCorrectTitle
+  case quizReviewAnswersAnswerIncorrectTitle
+  case quizReviewAnswersCorrectAnswerTitle
+  case quizQuitAlertTitle
+  case quizQuitAlertMessage
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [RANDARulesOfGolf.LS]
+  public typealias RawValue = Swift.String
+  public static var allCases: [RANDARulesOfGolf.LS] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension RANDARulesOfGolf.LS : RANDARulesOfGolf.LocalizableString {
+  public var bundle: Foundation.Bundle {
+    get
+  }
+}
+extension Swift.Optional where Wrapped == Swift.String {
+  public var nilIfEmpty: Swift.String? {
+    get
+  }
+}
+extension UIKit.NSDirectionalEdgeInsets {
+  public static var cell: UIKit.NSDirectionalEdgeInsets {
+    get
+  }
+  public static var screen: UIKit.NSDirectionalEdgeInsets {
+    get
+  }
+  public func verticalEdgeInsets(horizontalPadding: CoreGraphics.CGFloat = 0) -> UIKit.NSDirectionalEdgeInsets
+  public func horizontalEdgeInsets(verticalPadding: CoreGraphics.CGFloat = 0) -> UIKit.NSDirectionalEdgeInsets
+  public func horizontalEdgeInsets(top: CoreGraphics.CGFloat = 0, bottom: CoreGraphics.CGFloat = 0) -> UIKit.NSDirectionalEdgeInsets
+  public func leadingEdgeInsets() -> UIKit.NSDirectionalEdgeInsets
+  public func trailingEdgeInsets() -> UIKit.NSDirectionalEdgeInsets
+  public var edgeInsets: UIKit.UIEdgeInsets {
+    get
+  }
+  public init(all: CoreGraphics.CGFloat)
+  public init(horizontal: CoreGraphics.CGFloat = 0, vertical: CoreGraphics.CGFloat = 0)
+}
+extension RANDARulesOfGolf.ROGTheme {
+  public enum Image : Swift.String, Swift.CaseIterable {
+    case back
+    case forward
+    case disclosureIndicator
+    case yellowCurve
+    case findInRule
+    case sections
+    case close
+    case blueRectangle
+    case tab_browse_unselected
+    case tab_search_unselected
+    case tab_learn_unselected
+    case tab_news_unselected
+    case tab_settings_unselected
+    case tab_browse_selected
+    case tab_search_selected
+    case tab_learn_selected
+    case visualSearch
+    case officialRulesOfGolf
+    case beginnerQuiz
+    case intermediateQuiz
+    case advancedQuiz
+    case iconANotSelected
+    case iconASelected
+    case iconBNotSelected
+    case iconBSelected
+    case iconCNotSelected
+    case iconCSelected
+    case iconQuizCorrect
+    case iconQuizIncorrect
+    case upDisclosure
+    case downDisclosure
+    case rightDisclosure
+    case iconTintRightArrow
+    case play
+    case handicapCalculatorImage
+    #warning("Mock image: to be removed")
+    case girlsGolf2
+    case tealRectangle
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [RANDARulesOfGolf.ROGTheme.Image]
+    public typealias RawValue = Swift.String
+    public static var allCases: [RANDARulesOfGolf.ROGTheme.Image] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SwitchTVCell : UIKit.UITableViewCell, RANDARulesOfGolf.NibLoadableView, RANDARulesOfGolf.DataConfigurable {
+  public struct ViewModel : RANDARulesOfGolf.CellData {
+    public var uid: Any?
+    public init(uid: Any? = nil, title: Swift.String?, subtitle: Swift.String? = nil, isOn: Swift.Bool?, valueDidChange: ((Swift.Bool) -> Swift.Void)?)
+  }
+  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) public func configure(viewModel: RANDARulesOfGolf.SwitchTVCell.ViewModel?)
+  @available(iOS 3.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public typealias Border = (width: CoreGraphics.CGFloat, color: UIKit.UIColor)
+extension UIKit.UIImage {
+  public class func image(fillColor: UIKit.UIColor, border: RANDARulesOfGolf.Border?, cornerRadius: CoreGraphics.CGFloat = 0, imageSize: CoreGraphics.CGSize? = nil) -> UIKit.UIImage
+}
+extension UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) public func setTextOrHide(_ text: Swift.String?)
+  @_Concurrency.MainActor(unsafe) public func set(_ fontStyle: RANDARulesOfGolf.ROGTheme.FontStyle, _ colorStyle: RANDARulesOfGolf.ROGTheme.ColorStyle, _ numberOfLines: Swift.Int = 1)
+}
+extension UIKit.UITextView {
+  @_Concurrency.MainActor(unsafe) public func set(_ fontStyle: RANDARulesOfGolf.ROGTheme.FontStyle, _ colorStyle: RANDARulesOfGolf.ROGTheme.ColorStyle)
+}
+extension RANDARulesOfGolf.LoadingMode : Swift.Equatable {}
+extension RANDARulesOfGolf.LoadingMode : Swift.Hashable {}
+extension RANDARulesOfGolf.AlertAction.Style : Swift.Equatable {}
+extension RANDARulesOfGolf.AlertAction.Style : Swift.Hashable {}
+extension RANDARulesOfGolf.AlertStyle : Swift.Equatable {}
+extension RANDARulesOfGolf.AlertStyle : Swift.Hashable {}
+extension RANDARulesOfGolf.RadikalFonts : Swift.Equatable {}
+extension RANDARulesOfGolf.RadikalFonts : Swift.Hashable {}
+extension RANDARulesOfGolf.RadikalFonts : Swift.RawRepresentable {}
+extension RANDARulesOfGolf.ROGTheme.FontStyle : Swift.Equatable {}
+extension RANDARulesOfGolf.ROGTheme.FontStyle : Swift.Hashable {}
+extension RANDARulesOfGolf.NumberedTVCell.Style : Swift.Equatable {}
+extension RANDARulesOfGolf.NumberedTVCell.Style : Swift.Hashable {}
+extension RANDARulesOfGolf.HTTPMethod : Swift.Equatable {}
+extension RANDARulesOfGolf.HTTPMethod : Swift.Hashable {}
+extension RANDARulesOfGolf.HTTPMethod : Swift.RawRepresentable {}
+extension RANDARulesOfGolf.AppLanguage : Swift.Equatable {}
+extension RANDARulesOfGolf.AppLanguage : Swift.Hashable {}
+extension RANDARulesOfGolf.AppLanguage : Swift.RawRepresentable {}
+extension RANDARulesOfGolf.ROGTheme.ColorStyle : Swift.Equatable {}
+extension RANDARulesOfGolf.ROGTheme.ColorStyle : Swift.Hashable {}
+extension RANDARulesOfGolf.ROGTheme.ColorStyle : Swift.RawRepresentable {}
+extension RANDARulesOfGolf.QuizDifficulty : Swift.Equatable {}
+extension RANDARulesOfGolf.QuizDifficulty : Swift.Hashable {}
+extension RANDARulesOfGolf.QuizDifficulty : Swift.RawRepresentable {}
+extension RANDARulesOfGolf.ROGError : Swift.Equatable {}
+extension RANDARulesOfGolf.ROGError : Swift.Hashable {}
+extension RANDARulesOfGolf.LS : Swift.Equatable {}
+extension RANDARulesOfGolf.LS : Swift.Hashable {}
+extension RANDARulesOfGolf.LS : Swift.RawRepresentable {}
+extension RANDARulesOfGolf.ROGTheme.Image : Swift.Equatable {}
+extension RANDARulesOfGolf.ROGTheme.Image : Swift.Hashable {}
+extension RANDARulesOfGolf.ROGTheme.Image : Swift.RawRepresentable {}
