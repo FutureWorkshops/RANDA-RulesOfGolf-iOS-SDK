@@ -1,0 +1,11 @@
+framework module RANDARulesOfGolf {
+  umbrella header "RANDARulesOfGolf.h"
+
+  export *
+  module * { export * }
+}
+
+module RANDARulesOfGolf.Swift {
+  header "RANDARulesOfGolf-Swift.h"
+  requires objc
+}

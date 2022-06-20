@@ -1,0 +1,129 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RANDARulesOfGolf
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import UIKit
+import Swift
+import Combine
+import _Concurrency
+import _StringProcessing
+@_exported import RANDARulesOfGolf
+
+@objc public enum AppLanguage : Swift.Int, Swift.RawRepresentable, Swift.CaseIterable {
+  case english
+  case czech
+  case dutch
+  case finnish
+  case danish
+  case german
+  case hungarian
+  case icelandic
+  case indonesian
+  case japanese
+  case korean
+  case norwegian
+  case portuguese
+  case portugueseBrazilian
+  case chinese
+  case vietnamese
+  case swedish
+  case french
+  case frenchCanadian
+  case spanish
+  case spanishSouthAmerican
+  case estonian
+  case italian
+  case latvian
+  case polish
+  case slovakian
+  case slovenian
+  case turkish
+  public typealias RawValue = Swift.String
+  public var rawValue: RANDARulesOfGolf.AppLanguage.RawValue {
+    get
+  }
+  public init?(rawValue: RANDARulesOfGolf.AppLanguage.RawValue)
+  public static var supported: [RANDARulesOfGolf.AppLanguage] {
+    get
+  }
+  public typealias AllCases = [RANDARulesOfGolf.AppLanguage]
+  public static var allCases: [RANDARulesOfGolf.AppLanguage] {
+    get
+  }
+}
+extension RANDARulesOfGolf.AppLanguage {
+  public var languageIdentifier: Swift.String {
+    get
+  }
+  public static var current: RANDARulesOfGolf.AppLanguage {
+    get
+  }
+  public var currentName: Swift.String {
+    get
+  }
+  public var englishName: Swift.String {
+    get
+  }
+}
+
+@_inheritsConvenienceInitializers @objc public class ROGSDK : ObjectiveC.NSObject {
+  @objc public class func setLanguage(language: RANDARulesOfGolf.AppLanguage)
+  @objc public class func currentLanguage() -> RANDARulesOfGolf.AppLanguage
+  @objc public class func englishName(language: RANDARulesOfGolf.AppLanguage) -> Swift.String
+  @objc public class func languadeCode(language: RANDARulesOfGolf.AppLanguage) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+
+@objc @_Concurrency.MainActor(unsafe) public class ROGBrowserNavigationController : UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc deinit
+}
+
+@objc @_Concurrency.MainActor(unsafe) final public class ROGSearchNavigationController : UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) @objc override final public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override final public var childForStatusBarStyle: UIKit.UIViewController? {
+    @objc get
+  }
+  @objc deinit
+}
+
+@objc @_Concurrency.MainActor(unsafe) final public class ROGLearnNavigationController : UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) @objc override final public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @objc deinit
+}
