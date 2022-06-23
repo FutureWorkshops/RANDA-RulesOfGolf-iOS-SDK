@@ -75,3 +75,9 @@ Present the view controller using the following:
 ROGBrowserNavigationController *rogBrowserNavigationController = [[ROGBrowserNavigationController alloc] init];  
 [self presentViewController:rogBrowserNavigationController animated:YES completion:nil];
 ```
+
+## Result
+
+You should be able to see the following
+
+<img src="https://user-images.githubusercontent.com/1862078/175298430-227933b5-85e0-4fd9-9fea-f0eb0da8c5b2.png" alt="screenshot" width="400"/>
