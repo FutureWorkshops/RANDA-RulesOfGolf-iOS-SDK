@@ -18,7 +18,7 @@ At the top of your `Podfile` you should have least those source:
 
 ```
 source 'git@github.com:FutureWorkshops/RANDA-RulesOfGolf-iOS-PodRepo.git'
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 ```
 
 Then add the following to your `Podfile`:
