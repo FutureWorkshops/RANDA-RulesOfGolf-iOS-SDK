@@ -14,7 +14,7 @@ Then add the repo to your podspecs repositories using the following:
 pod repo add RANDA-RulesOfGolf-iOS-PodRepo git@github.com:FutureWorkshops/RANDA-RulesOfGolf-iOS-PodRepo.git
 ```
 
-At the top of your `Podfile` you should have least those source:
+At the top of your `Podfile` you should have least those sources:
 
 ```
 source 'git@github.com:FutureWorkshops/RANDA-RulesOfGolf-iOS-PodRepo.git'
