@@ -6,6 +6,6 @@ framework module RANDARulesOfGolf {
 }
 
 module RANDARulesOfGolf.Swift {
-    header "RANDARulesOfGolf-Swift.h"
-    requires objc
+  header "RANDARulesOfGolf-Swift.h"
+  requires objc
 }

@@ -4,57 +4,89 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AdvancedModePromptViewController.nib</key>
+		<data>
+		5BezOnlMOa4fs22jL2hCvcygU+Y=
+		</data>
+		<key>AnnotationView.nib</key>
+		<data>
+		NYfrUxP3WZl7g0Ca9inhrHr6tjk=
+		</data>
 		<key>AnswerView.nib/objects-14.0+.nib</key>
 		<data>
-		gb/ZFoDD7ZW88lJNvGaXixn6Io8=
+		1v3akdPHLKh3aObGb41twN2KNk8=
 		</data>
 		<key>AnswerView.nib/runtime.nib</key>
 		<data>
-		up+dHFuJ5JzvNHEaOlZ8A2H/7gs=
+		2o/DRYJ+Ayz+nTt2EtOzlp+zMOA=
 		</data>
 		<key>Assets.car</key>
 		<data>
-		OG9O+cS4vt2vyhQqoYwLvgEgN5I=
+		fn/MQzf4HpcEL9+xjBdL9ofS3O8=
 		</data>
 		<key>BigVideoCVCell.nib</key>
 		<data>
-		AS0kXmOwxY2VINgMeEfDn4UGoLA=
+		MA+xjvF1uEwkPU6IcFchBlT5hKo=
 		</data>
 		<key>BottomNavigationView.nib</key>
 		<data>
-		7cc5AZvsxFfBj8dEMTyEZgnWl+Q=
-		</data>
-		<key>BrowserSmallCVCell.nib</key>
-		<data>
-		QtTW1v7HzoY+yYFB53AEKpXdD6k=
-		</data>
-		<key>BrowserTextCVCell.nib</key>
-		<data>
-		XEsuU0Yvjlm6B4RhGPhFfOcoNYk=
+		c07nxLflcu5Nq9hvdmQvUocRE6c=
 		</data>
 		<key>ButtonCRView.nib</key>
 		<data>
-		8Pk0zmAV6PydcJDMwBKnnFm1Cmg=
+		rbNuJFWwqiJYZuvRHMiFG0io234=
 		</data>
 		<key>CardButton.nib</key>
 		<data>
-		jSAIhXr6pLBtlxBg6C5sSXMF9/A=
+		h2PIdKXVNzmGEquEpFJJc5IwPI8=
 		</data>
-		<key>CardButtonCVCell.nib</key>
+		<key>CardButtonCVCell.nib/objects-14.0+.nib</key>
 		<data>
-		PAHt3gKsuufuhCtH8WXEaFL30LE=
+		JMWzdSlwzKPOw/nzEb2D0HzASHg=
+		</data>
+		<key>CardButtonCVCell.nib/runtime.nib</key>
+		<data>
+		JMWzdSlwzKPOw/nzEb2D0HzASHg=
 		</data>
 		<key>CommitteeProcedureHeaderView.nib</key>
 		<data>
-		eBFd+uT9BqNYjnPdubTUI/Bfo1Y=
+		GXJgl+qJuQxm0ih/zUlny2blGOg=
+		</data>
+		<key>DiagramCarouselView.nib</key>
+		<data>
+		TnFXscoEqCVNnApDg3E34pIpT0Q=
+		</data>
+		<key>DiagramView.nib</key>
+		<data>
+		SG7cIglqa0HmXtos5BF47fIcSwc=
+		</data>
+		<key>ErrorViewController.nib</key>
+		<data>
+		ZpBHcZddxRwHXyiss7Gn+PCZTLc=
+		</data>
+		<key>FilterControlsView.nib</key>
+		<data>
+		IWQo7koMoeu/OHFCIlTx1b3oayU=
+		</data>
+		<key>FilterOptionTVCell.nib/objects-14.0+.nib</key>
+		<data>
+		2NDFKWpFO5SkztkFTxTQnmrwjeU=
+		</data>
+		<key>FilterOptionTVCell.nib/runtime.nib</key>
+		<data>
+		bBrQU4oCP2SCV3jCQNYc65fmD+s=
+		</data>
+		<key>FilterViewController.nib</key>
+		<data>
+		UP/iIguIN36CQRUcUJftNGc/U3g=
 		</data>
 		<key>GradientHeaderView.nib</key>
 		<data>
-		7UMp+cUi2WGQzZUfvfeWtjK0jpY=
+		Neqgo7cn9eY1fqNQqGdw7oakVQw=
 		</data>
 		<key>Headers/RANDARulesOfGolf-Swift.h</key>
 		<data>
-		XI4qYocU9LdOHz9mNZghOOPph7o=
+		k9kSHw/WaBI8UMFpj/f3Bnsg66U=
 		</data>
 		<key>Headers/RANDARulesOfGolf.h</key>
 		<data>
@@ -62,79 +94,139 @@
 		</data>
 		<key>IconTVCell.nib</key>
 		<data>
-		yEALvpY/UOo+cJvfJK+qL3BWnp4=
+		N4mjrAfTcmb/A2GIOn2Vx8hOiLw=
 		</data>
 		<key>ImageTVCell.nib</key>
 		<data>
-		uNIXvKwh+ahitnmRl6meeglGyXA=
+		wEL/Apa5ZPugtoqE7BIBsKqXV8w=
 		</data>
 		<key>IndexView.nib</key>
 		<data>
-		AmrWx9ynTAcgFyXqfiwTl1J+Wb4=
+		OtNVKji5uVpt5fMkisM3Asgy4zw=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jzdGoopZ0domLKtlyewZHrnOlHk=
+		wz2IHj/OfRSNqDbRDs+Dx5y8+KY=
 		</data>
 		<key>InfoImageCVCell.nib</key>
 		<data>
-		mB8J8VImprfGwBZRRsoMdu3tuPQ=
+		H+Yg/o6mmCIt5Cxbd8HYYnDDa6A=
+		</data>
+		<key>LICENSE.txt</key>
+		<data>
+		fcVBU3ybJ807mkKnHBU9FZL0YHk=
+		</data>
+		<key>LearnViewController.nib</key>
+		<data>
+		RFr414twSePQKHrOuStjEHFj+vs=
+		</data>
+		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		ni//s/0N3BNQfpKRmsphoEbobuA=
+		</data>
+		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		u6PB3kj3Q4pp69OL/yj0/9QYe4s=
 		</data>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		M5I3m621FssEHSER7u2Be+cYrEo=
+		QRoLRmOQPuOsc+lrEjsOKAebsEg=
 		</data>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ledxUCC00ojq+X2foFqB0p8B12A=
+		u6PB3kj3Q4pp69OL/yj0/9QYe4s=
 		</data>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		aG44b0DaxWUKu7qsk6X187toKBU=
+		jHGt8aJ13Tf29YnNSLCdvYjAAdk=
+		</data>
+		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<data>
+		ni//s/0N3BNQfpKRmsphoEbobuA=
+		</data>
+		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		bAMQs/3oFmMzYT+YtvBH3ydZ8qo=
 		</data>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Bk/MjZl3Gapv44Nx+2YaC5aAdBg=
+		xyCqQV9EVXvXgCZVVdxvsUlvW1I=
 		</data>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		1iou9vX2lmMqY2B/Hsj8dtTA9tM=
+		bAMQs/3oFmMzYT+YtvBH3ydZ8qo=
 		</data>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		8DIyEWrmtauOmjTqCdQbU2h5/vs=
+		WSTh7LGIFBnfQZ2vyeYImb93faw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		7+prY2VGkMYTSyJWFrPp5dIrZJs=
+		3tDGTiED//Jn6bi7KMbKgKyXeos=
+		</data>
+		<key>NoTranslationView.nib</key>
+		<data>
+		IH/qPQLnZ4C5tjyBQEBQ2qBmrNY=
 		</data>
 		<key>NumberedTVCell.nib</key>
 		<data>
-		a1dpCt5XZzRWG9nwF0OqWbETA34=
+		7wf7yeQRGKUaHiQmEM7uKza4PYA=
+		</data>
+		<key>PageLoadingTVCell.nib/objects-14.0+.nib</key>
+		<data>
+		OB9MCWZ/95VBqfE43WtJblskSVA=
+		</data>
+		<key>PageLoadingTVCell.nib/runtime.nib</key>
+		<data>
+		t7J+sHpdBlr9wCVHPP8pM+2lV4I=
 		</data>
 		<key>PlainTVHeaderFooterView.nib</key>
 		<data>
-		AILMM0GxDWifLbOYR4oMxFE3Tog=
+		OdYT4j3oUm6G+mNdSIog0xItGqU=
+		</data>
+		<key>PlayKitViewController.nib</key>
+		<data>
+		CJSnHWyV6Vg2+kACVSfIpze/Brs=
+		</data>
+		<key>Pods-RANDARulesOfGolf-metadata.plist</key>
+		<data>
+		5snkdhI+vww+xnt7Wr8qcZzMdjg=
+		</data>
+		<key>Pods-RANDARulesOfGolf-settings-metadata.plist</key>
+		<data>
+		DDz2QpGV8MMlg15T5eXOulC8dp8=
+		</data>
+		<key>PopulateLanguageViewController.nib</key>
+		<data>
+		RLJHAzX0KIxEZi/e5r34OuMeFQU=
 		</data>
 		<key>QuizAnswerView.nib</key>
 		<data>
-		WX1NUU8mPKwPqz1p+vZV0di2fKM=
+		e9Oj0eP21kL7/QBojiDvVLHmnN4=
 		</data>
 		<key>QuizAnswersViewController.nib</key>
 		<data>
-		QwSrOVqp3Jx8vu1Y3wJuVKxUN+4=
+		UNpQzQwTBPv+hcIAKqrNX+dv7n8=
 		</data>
 		<key>QuizQuestionViewController.nib</key>
 		<data>
-		0YwqsbOQsP+jtwAsO/WztvYy92k=
+		GV2zHNuf153Wu36dhiiMtg/7aMs=
 		</data>
 		<key>QuizResultViewController.nib</key>
 		<data>
-		ppD8KhYePS770UxrxOjsjaoofu4=
+		vM7C4XnxJs4QJZ884dl9zXISkeA=
 		</data>
 		<key>ROGBrowserViewController.nib</key>
 		<data>
-		o3M34gpMy3Ykft60KwnQtdye0ks=
+		STR6IT6ArWtDOIEWWngByfxBHl4=
+		</data>
+		<key>ROGNavSplitViewController.nib</key>
+		<data>
+		j14gioOrwkK9UVWm76FA+JaEIf0=
+		</data>
+		<key>ROGSplitViewController.nib</key>
+		<data>
+		L1dZVfwE2aSIxTgUO3lzpz/ikb8=
 		</data>
 		<key>Radikal-Bold.otf</key>
 		<data>
@@ -164,17 +256,41 @@
 		<data>
 		1eeBdHFOEB6iBew0lGqEE4qrMyU=
 		</data>
+		<key>RelatedRuleView.nib/objects-14.0+.nib</key>
+		<data>
+		qAHe+BUjkGw+FS20KsSduy/7SE8=
+		</data>
+		<key>RelatedRuleView.nib/runtime.nib</key>
+		<data>
+		qAHe+BUjkGw+FS20KsSduy/7SE8=
+		</data>
+		<key>RolexFooterView.nib</key>
+		<data>
+		95mKn8gIXDtBYmmDt2yCcbvGhuk=
+		</data>
+		<key>RolexHeaderView.nib</key>
+		<data>
+		te2cGKebtijErJdGXOs59Az7lKs=
+		</data>
+		<key>RolexLogoCVCell.nib</key>
+		<data>
+		yzy9CPZUKS40wu44SupNNXHWce0=
+		</data>
 		<key>RuleButtonsView.nib</key>
 		<data>
-		H63lZrGzbzF4GA9iya4B1gJ9suE=
+		RwOTfIRHITGC4FImR4Vah7gUpFY=
+		</data>
+		<key>RuleFinderViewController.nib</key>
+		<data>
+		JCWcWuSMTSYcyJ5WZW6Zp1WfTas=
 		</data>
 		<key>RuleHeaderView.nib</key>
 		<data>
-		y8BtmyWRcDcgetuCtMquXoJTfgA=
+		cVJ4ZspDWsGWGXsGgnu1XhsMMcE=
 		</data>
 		<key>RuleSectionView.nib</key>
 		<data>
-		IQByg81ETzRBaF83DOUIZs2g+yA=
+		4/KyqyxhieV1/mZ0LgbnFu2WSXk=
 		</data>
 		<key>RulesBrowserViewController.nib</key>
 		<data>
@@ -182,55 +298,144 @@
 		</data>
 		<key>RulesOfGolf.momd/RulesOfGolf.mom</key>
 		<data>
-		GQ3kAv9kwjT+neTE3u9deWKXW4Y=
+		WKykJP2U2nkbJX4FHcvFxjyOVNc=
 		</data>
 		<key>RulesOfGolf.momd/VersionInfo.plist</key>
 		<data>
-		jnNmpyrTlHwWJJYWKi6oqlNwlrQ=
+		Amfh8XaSfZKlX1esdMA9+KbtRVc=
+		</data>
+		<key>RulesOfGolf.sqlite</key>
+		<data>
+		ZUUVUQ2PqLeiq21zujLy13pEp7o=
+		</data>
+		<key>RulesOfGolf.sqlite-shm</key>
+		<data>
+		588zCtzitDu+oNobzxKH4ACgWJk=
+		</data>
+		<key>RulesOfGolf.sqlite-wal</key>
+		<data>
+		ATSH4R2FseFDxTDPKNSboTfmcZE=
 		</data>
 		<key>ScrollableStackViewController.nib</key>
 		<data>
-		EeZd9nvmrqB087m/43bTUs/6Sb4=
+		eji1kIl4i4ipm7vd3/DmbDfoZ4s=
+		</data>
+		<key>SearchBarView.nib</key>
+		<data>
+		4RWc87pc4yqiLMWpBg9znvrHTWI=
+		</data>
+		<key>SearchCategoryTVCell.nib</key>
+		<data>
+		3Adsa0iNGVwt8uabP44PxOZ6mXM=
+		</data>
+		<key>SearchControlsView.nib</key>
+		<data>
+		n8I44QpvSYt50iwp1tlJFuIVvjc=
+		</data>
+		<key>SearchResultTVCell.nib</key>
+		<data>
+		iuKhNVzJfcD+tWzURI9NlQ6dxxg=
+		</data>
+		<key>SearchSectionHeaderTVCell.nib</key>
+		<data>
+		Lx0qKv3XLTQ/+0GVVoeFmUEo9LA=
+		</data>
+		<key>SearchSimpleListingTVCell.nib</key>
+		<data>
+		vbbJAKL0+1UKDYB8+JAWjp3NZSk=
+		</data>
+		<key>SearchViewController.nib</key>
+		<data>
+		6rWdNLrlrEwApLaV5riWz5GHsME=
+		</data>
+		<key>SectionTitleHeaderFooterView.nib</key>
+		<data>
+		VHJuyRc5DH7c/AU69tlAY7RsfiE=
 		</data>
 		<key>SectionsHeaderView.nib</key>
 		<data>
-		DdLOes16YduxQkjHYspbSPYzktE=
+		oGiGpijJFAw6MJe3bA55uc9Wv/E=
 		</data>
+		<key>SeeAllVideosViewController.nib</key>
+		<data>
+		YimBteqQtDAbQeFtuzPynlHZaHc=
+		</data>
+		<key>Settings.bundle/Pods-RANDARulesOfGolf-settings-metadata.plist</key>
+		<data>
+		xkRgBxV9828E4RCEIDrQOZkuATk=
+		</data>
+		<key>Settings.bundle/Pods-RANDARulesOfGolfTests-settings-metadata.plist</key>
+		<data>
+		xkRgBxV9828E4RCEIDrQOZkuATk=
+		</data>
+		<key>Settings.bundle/Root.plist</key>
+		<data>
+		jOhqEUF1/xyY+fuswiWT+ELC3dI=
+		</data>
+		<key>Settings.bundle/en.lproj/Root.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			t4KY9Gh4uIiOv7VnHtRrKEuPRY8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>SimpleTVCell.nib</key>
 		<data>
-		yLHty56d8A/Z0b1T+ynl4+0DUb0=
+		XdRbkm4hFnxZ78rmffS6s9p7IEg=
 		</data>
 		<key>SmallVideoCVCell.nib</key>
 		<data>
-		+7t1UMHZPn/IFcRUcMn8OIglq2s=
+		GyKIBhTp29UVtg3ARrUqIbKgU1Q=
 		</data>
-		<key>SwitchTVCell.nib</key>
+		<key>TVAppearenceCVCell.nib/objects-14.0+.nib</key>
 		<data>
-		qKTp/QGjLvdG+JJNqiLykTSI6Uk=
+		jyzqddS5rJJUWuwMcsD6JDY4gsw=
 		</data>
-		<key>TVAppearenceCVCell.nib</key>
+		<key>TVAppearenceCVCell.nib/runtime.nib</key>
 		<data>
-		cw+hK6GXpLiJfrThtNfFYD5JI9k=
+		jyzqddS5rJJUWuwMcsD6JDY4gsw=
 		</data>
 		<key>TableViewController_grouped.nib</key>
 		<data>
-		kQWckWDNgdBJ40MmjgjaMoKJOXQ=
+		EpUHUun4GkWebc6A+4mc9ppcqAA=
 		</data>
 		<key>TableViewController_insetGrouped.nib</key>
 		<data>
-		59mLb630pvNpjalEDqXVEHMU9gI=
+		EBopGhCAZO+yWbwuPehYIPOvt6Q=
 		</data>
 		<key>TableViewController_plain.nib</key>
 		<data>
-		VA5Gk4GwR7kofog8U9X2no/c+gk=
+		lQcnEzf16/RmVl8IJTGG4ZzlWU8=
 		</data>
 		<key>TextViewController.nib</key>
 		<data>
-		cVLwW275Q2AIFAq3/OY6ZiZDXJU=
+		t5yv/IPrVmF3CzRreHkLmQJ/lWE=
 		</data>
 		<key>TitledCRView.nib</key>
 		<data>
-		DMLQbh0G13rOO03JaKmqyIkbc+s=
+		tb1p8XGiskNNCiZ/xTf6kmsqYWc=
+		</data>
+		<key>VideoPlayerViewController.nib/objects-14.0+.nib</key>
+		<data>
+		nWEbWUqvbFuc/dZy7FWnwq+WtlQ=
+		</data>
+		<key>VideoPlayerViewController.nib/runtime.nib</key>
+		<data>
+		pvj5zA8GEjPl0zTGVbJ0nSYt4SA=
+		</data>
+		<key>VideoThumbnailView.nib</key>
+		<data>
+		egwT3P6lntI0wKP6q+g2zf8j2Ng=
+		</data>
+		<key>VideosFilterViewController.nib</key>
+		<data>
+		RLJHAzX0KIxEZi/e5r34OuMeFQU=
+		</data>
+		<key>VideosViewController.nib</key>
+		<data>
+		ERw8/u0xyNpk3/T9BZxqZOFEet0=
 		</data>
 		<key>cs.lproj/Localizable.strings</key>
 		<dict>
@@ -263,7 +468,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JCIIh6EwpcVwWw705kziI2aZZ2s=
+			S4zlS/IqkXgDZ+cbehuFscLqG3k=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -282,6 +487,15 @@
 			<key>hash</key>
 			<data>
 			K6xhlxz7F+VKnfyuRJDv8LqWrz0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>fr-CA.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AAU9wRaGzDUiMhXg1+5pcJ6rRds=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -367,6 +581,10 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>scaleToFit.js</key>
+		<data>
+		9SUiKXFrsMcDD648igOw2N3JrDU=
+		</data>
 		<key>sv.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
@@ -397,95 +615,151 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AdvancedModePromptViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WXZw5Q6UV0aYYY6pQMqM1xOM03Ilgrb+du32Mw5pjJA=
+			</data>
+		</dict>
+		<key>AnnotationView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			V+Hz4KvmfLIifLLYxcl9qNSSG/CrHOYdkb8P0mIwpcs=
+			</data>
+		</dict>
 		<key>AnswerView.nib/objects-14.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wJKu/uBycW5+pzEgVxAzJ9RYmLr90Bg6vOBT75X+GIk=
+			b2nVDmvPP180hCa6gnD5NkEOvq+fYNWlQxCBTAxBD9A=
 			</data>
 		</dict>
 		<key>AnswerView.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NNlyLYshS9V3LxB9Cn6J6iNI56YmpS3eCAqmEU8Sovo=
+			SrIMskyREHr0fvgKeMr4jXMRDghd+PRRRPWph66r6+I=
 			</data>
 		</dict>
 		<key>Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w4MBO7ZGuR2UM/0fFcM/HYK/gET2VIv4e7vjQM/9LMc=
+			U/E5NpFKfKQXAkgQY7QeZPDxWFeiX3Y0r8eVpOA+hCs=
 			</data>
 		</dict>
 		<key>BigVideoCVCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eb0RJyYYswjrXamcXuzCBE7oc3A9vMMzQ1Z8y8cmrb8=
+			tUqLeXX9V2yeECuKZ9+Oa/1oIboZ1694zZtXJ8IF2uk=
 			</data>
 		</dict>
 		<key>BottomNavigationView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ckpmryjbJ1wVs0jm8ABifcr/ztEojVNIK8yMdNbAUY8=
-			</data>
-		</dict>
-		<key>BrowserSmallCVCell.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			z0H5WdRN9LUo6sHvIC7DBSrUeyYZrIoBMb6OeUgYJJA=
-			</data>
-		</dict>
-		<key>BrowserTextCVCell.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			NdalmVpzqWGfUm3ZVKj2cMnBNRIpRixWLxq7fpyR5Mk=
+			uuIJQxSIDW0cpVyiYUznETdAdiQdpR6zzq0Vnw3Wyjg=
 			</data>
 		</dict>
 		<key>ButtonCRView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ciUejTMLvmi3rc99MDoV7Pbgr3FjCp7f4DymB6unQ74=
+			ZFO74Kpbu4xuM4tyJDcz4PrG2/2O1kfHc6/NbXLtN0Y=
 			</data>
 		</dict>
 		<key>CardButton.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OxkPjlX2BYm1o8B0TDy8ay8OpdXmwJrKdbXDdzINm6E=
+			u43rpf1ccrwPNaAv2ta0mbeO48YNPkrcOso7il05pjQ=
 			</data>
 		</dict>
-		<key>CardButtonCVCell.nib</key>
+		<key>CardButtonCVCell.nib/objects-14.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4I6fhpP8Fp8XlIA/2b5ggevtljTvklSKLxVlzURjrlI=
+			VblKB2S0VJU453+YpjKdi36wGTxW9AUKlF7O/HW1aHw=
+			</data>
+		</dict>
+		<key>CardButtonCVCell.nib/runtime.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VblKB2S0VJU453+YpjKdi36wGTxW9AUKlF7O/HW1aHw=
 			</data>
 		</dict>
 		<key>CommitteeProcedureHeaderView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/oDTM/7Zx3BzUsvNtVUoEln1suPchE1Kk6lcQgJI7yU=
+			3M4K7z6XZI1kROk8cAstH0s8SbtgN6OHGUTKhH2P32U=
+			</data>
+		</dict>
+		<key>DiagramCarouselView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yYehhTYKGns+tDZy/NYf6ECBFsyHOyHuOZhAUGMRodM=
+			</data>
+		</dict>
+		<key>DiagramView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			q8P6yR2G0BoR6zjDM2EyZW7Hmvxe7zqymZ85wgLlV4Q=
+			</data>
+		</dict>
+		<key>ErrorViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			w208al10EVS2YNZ/epLiMFzx3t1EqOwMANW3A12YG/Q=
+			</data>
+		</dict>
+		<key>FilterControlsView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			E/n7ZB1PcXbPwNOhuJIM/D3G/SBiaOLmVNSOyXw6eXE=
+			</data>
+		</dict>
+		<key>FilterOptionTVCell.nib/objects-14.0+.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/osojieTJw0NRRm8+GyUNmGE15cINBvt4S7ZwfaMnfo=
+			</data>
+		</dict>
+		<key>FilterOptionTVCell.nib/runtime.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hU9pzzGUr7w8MLgbARUVAWlqXcBSVKm3dNvLLPx6PiM=
+			</data>
+		</dict>
+		<key>FilterViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+yR/1YFreUk53DWLfkQSpXNPafA/APLihnUw1hWW4Ms=
 			</data>
 		</dict>
 		<key>GradientHeaderView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ST1UYDx7hnFxVS6C9L3wRjFh+XcCT+wanyHm9+C4GC8=
+			8G73WA9KvWgi7ksv/X4BxX2u6B8qrZnIQz2mn9SyAPs=
 			</data>
 		</dict>
 		<key>Headers/RANDARulesOfGolf-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q6CJ4wfTaYAz057pCcIIN0u1dMTTQ7J46D8Kq+eYtmg=
+			XRwNDh8BcY4n9owOrCPpJcca4r7OfVTbuaTzCi3RqMo=
 			</data>
 		</dict>
 		<key>Headers/RANDARulesOfGolf.h</key>
@@ -499,126 +773,231 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CIys2WTTyk1FbYDkB+zWcWWs1uWfwye2RyteilWJVOQ=
+			aO3HnI0Ho1LnuQoCdHJLwmHctV1HHdCW9Z4hIQFAC1o=
 			</data>
 		</dict>
 		<key>ImageTVCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HhphbplT/rhGFEkiN85nB7F15PJGRttB1vzXjEpEaPg=
+			tJi+vPp327ua04arFbioMwUf2uM1zCtRp/uNH8So+Mo=
 			</data>
 		</dict>
 		<key>IndexView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kHkIftEK16zs+H0s0xc9KIpqasOH3w/TUxZg+dn1xFM=
+			aPkWIA+b4zyU3HBJ4IkEFWFgGv0ljgos5XNb3+Lfq5A=
 			</data>
 		</dict>
 		<key>InfoImageCVCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fzZ/9SZMYmO9QdOhzKeCcXXfSJt5fp3w22hk3LYvbok=
+			+C9TEuSTORcIjmYQFqG3g6a7uPzpsjsx+CzDMclqjjM=
+			</data>
+		</dict>
+		<key>LICENSE.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6R1WTcN56u1JWWGxAOsTLyL9BDMabwyUoHdRLIL9DSQ=
+			</data>
+		</dict>
+		<key>LearnViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wI0TIYAazV/zaAR7AhLwEwV7A/OZQ2OKQasRtuBbed0=
+			</data>
+		</dict>
+		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eLWLCzZLMERbXxnjYihZXMm1R8lmIX0kGD4SimnUC3w=
+			</data>
+		</dict>
+		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			s7/xEJPhFlLU4yUyGLZ6SOOSW66q/dGV62MPh0e1UHk=
 			</data>
 		</dict>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ze0DkhmnXglLBWPtbNn87CHXIiKzmr/LAhEeLSiBvLI=
+			9g0bwlHNe7e92Wenn2xyb9V7ChwZSK8Uwo34YJro7LI=
 			</data>
 		</dict>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			28lrIxyOKnFnJPmF4MZ5aJ/iC5EeZhPtDgZ0VaB+UGo=
+			s7/xEJPhFlLU4yUyGLZ6SOOSW66q/dGV62MPh0e1UHk=
 			</data>
 		</dict>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5FzFrpX06meJUpsTincva4zx1h2tUSedMYIOT64L1/s=
+			U9Hy9R5udm1EL9NO0Cd+9C84PbpeFlcOmNkALKk6WE0=
+			</data>
+		</dict>
+		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eLWLCzZLMERbXxnjYihZXMm1R8lmIX0kGD4SimnUC3w=
+			</data>
+		</dict>
+		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OFAJxtB7RVxfIgh0Dzf+FdBjD7+7cjdcY9LPk833f30=
 			</data>
 		</dict>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OVUxjtnu4X2tyeoh5Glvlj1LjPSuGG2x7MHDHImq4DQ=
+			/v5HOPHjHsXy8jYHImLXvV444JfRjIW+ZAZ1U8s+QoE=
 			</data>
 		</dict>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aetVnnUzJH+rCnR2qOgvCUDqxjSG7i2gNSVmG/2fX4o=
+			OFAJxtB7RVxfIgh0Dzf+FdBjD7+7cjdcY9LPk833f30=
 			</data>
 		</dict>
 		<key>Modules/RANDARulesOfGolf.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ePnqBs2UHHXRINXg17UWaU3eemtS3vJHQOCkiFZRuYs=
+			8pkCvxEyZQYshhSXp+14RkKa3oorgSoWe9pbZ61wO8M=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GvDUMxhZbbADOuKk8dC1nXuSKzQoXYSxi3eoDUmvb2g=
+			fKBkT6NN/3QSvyVKKX/mAE+WDgoKS1xN9ifVe33rMcA=
+			</data>
+		</dict>
+		<key>NoTranslationView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WqQDOgVj4eEqx+DDdNcbjv72J0FLFdWdAtnhNs0mz+w=
 			</data>
 		</dict>
 		<key>NumberedTVCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JCqufz6KCB4xbHbGQnZ3CIphv8ASJU+x8JKM1y/JDds=
+			gxhLp99axDy7SdXxXKcAKBuTpOQxyItK/WFxXEARzXw=
+			</data>
+		</dict>
+		<key>PageLoadingTVCell.nib/objects-14.0+.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WaBUGsZc2AJRwh1HH/NlH9NE3G4KTXGaL84ANfnFMpo=
+			</data>
+		</dict>
+		<key>PageLoadingTVCell.nib/runtime.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/5RH9qwqEZhWbUEVB1yf3NJzkLO3sdIMIElMj5eNokE=
 			</data>
 		</dict>
 		<key>PlainTVHeaderFooterView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0Z9ldavybabRNr2Vi4Pq65NnB/NbGytL+BZnxwwG72c=
+			rzpxQMDv7y+Fph/MS/IYqDogMIvPzqPW7/kYsObV9y4=
+			</data>
+		</dict>
+		<key>PlayKitViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dKHCRyXXExwLr/rSWbCfSnr3IH4uIH6EozKTmXexzJ4=
+			</data>
+		</dict>
+		<key>Pods-RANDARulesOfGolf-metadata.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3VIu6Uhba8t3AKmflbuHU+xGqqSAx7E7rXGvTlSPPeM=
+			</data>
+		</dict>
+		<key>Pods-RANDARulesOfGolf-settings-metadata.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gQ+GwwJn0cD/0BoWdML9F2iX0lfcZdJpct9OgiW3bQE=
+			</data>
+		</dict>
+		<key>PopulateLanguageViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5SE2rrqqGBxqtARVcW0IqBxV16bJ5Qto3JJLosaSR+o=
 			</data>
 		</dict>
 		<key>QuizAnswerView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xf84JsH1tbvhjveCs4dUkpO/44fY0gO+wqN2CweV0Kk=
+			jsCz+emkPLYZZCbPKUx83iDZWv7VEbKJ5tw1S6i3Kro=
 			</data>
 		</dict>
 		<key>QuizAnswersViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9Nn247vy0muOFsL4v6fTIbhaVD4xBKxlFH3IvMIq5dk=
+			UHqviE+Atb1XQouVQBMQls7ODP7ndZo5bKuFNGbwz+Q=
 			</data>
 		</dict>
 		<key>QuizQuestionViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BDvthjpcLs5+7DTa8n3hs+TJVseGa39lYpBnj+c++kY=
+			Ck2zZJZFmU6PGrQUau42Rv0Es+kBeYF5qY2lknhF1UQ=
 			</data>
 		</dict>
 		<key>QuizResultViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q3IO5Tk6tegrCVuagys62aCwA7Ug2KKHaTPmCEEeEhc=
+			UyfgX7T6Zd3Ef3GGKjamGD9aQb8TekxITDUQMmmzGyE=
 			</data>
 		</dict>
 		<key>ROGBrowserViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YoZNJnJR4E0bllPPvJsES2OtjJe8qxrbQ0yMdMY9+qI=
+			bj+mEW1OA63/FnAqdnxXMug+G+wUSE5Na0FwWZ07GZ4=
+			</data>
+		</dict>
+		<key>ROGNavSplitViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+7qfhm1KLHGTkoTCOFgg0xPdLgJJT3MX7XAnkai4MtU=
+			</data>
+		</dict>
+		<key>ROGSplitViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EI8zEliQxVhFJvH6LKk1BrFyKYoG5WQvOnOpLdaweWw=
 			</data>
 		</dict>
 		<key>Radikal-Bold.otf</key>
@@ -670,25 +1049,67 @@
 			20veR8ijBkSEsikjmbrEbwqRhmF+ZdpOxo7rYO+FmbU=
 			</data>
 		</dict>
+		<key>RelatedRuleView.nib/objects-14.0+.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WqlFLhqo7kfrykYQ+8gL+wIGEjxgJ/wATsU6vAcI54U=
+			</data>
+		</dict>
+		<key>RelatedRuleView.nib/runtime.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WqlFLhqo7kfrykYQ+8gL+wIGEjxgJ/wATsU6vAcI54U=
+			</data>
+		</dict>
+		<key>RolexFooterView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MXzE9KLTtn7o8lLr2/I+TpNaQsVQoRH64oZqT8d8s6o=
+			</data>
+		</dict>
+		<key>RolexHeaderView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PTyBlgbtfYGhXMJa/ad4t9c8c0tV5FnBt2Rp8vkxGvs=
+			</data>
+		</dict>
+		<key>RolexLogoCVCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jA0D+6ZHiv12DJ1h5yd/hJnIiGhjQFc0FlldGAiXZG8=
+			</data>
+		</dict>
 		<key>RuleButtonsView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IL9WweswBGioOh7sUVJ6wsqj/yikmW9RQ2qsdi0/97s=
+			4nHlauVDwihcIg/W+Tj+OyLi1qEevKZQOnoiJLHzxDo=
+			</data>
+		</dict>
+		<key>RuleFinderViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yXCNmnVYDu87tJjh1Oeri+uvSGHoC+CCqLNeQ/a2Kl8=
 			</data>
 		</dict>
 		<key>RuleHeaderView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pM2EQXE/gwhDrvsGg/RXJo/tICltdGGcLxqg7vA7ApY=
+			R41c7RZKdsRwyKZNzMuwGxnuMWJneCqxHz+ZTtVHYLQ=
 			</data>
 		</dict>
 		<key>RuleSectionView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			43zebcJ/e8F4LFmTjQkCf65fVZV3xy67wniYpfz6wsc=
+			fn2zkSDIploaf5w8n761ggSBhGAD5totENfjXddK62E=
 			</data>
 		</dict>
 		<key>RulesBrowserViewController.nib</key>
@@ -702,91 +1123,240 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FgyaNM8guWrmAXDQF4NNKHTVOAoXNYtpxMKknmx9XKY=
+			aggKMZ9CqT0CzWcZCyjuBrSjE3OSnMLm88ldviWQVvs=
 			</data>
 		</dict>
 		<key>RulesOfGolf.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uLy2npig+MLD6ZaU0dF4umxQcATKPuHbd50P3LFnAng=
+			H68JPzWtXoeyVxRoibOyw0yFohn+3BML8Jm85/BeO5c=
+			</data>
+		</dict>
+		<key>RulesOfGolf.sqlite</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qonbftvM+FSU9KrBWCL9E9x/mIbqD3d59s2i2CSmyX8=
+			</data>
+		</dict>
+		<key>RulesOfGolf.sqlite-shm</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qDsC9d0TOpilIaZyIgWJdP90k2ahLmeINjccEl+wxiw=
+			</data>
+		</dict>
+		<key>RulesOfGolf.sqlite-wal</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7/nTRghHlb8VKKop7SIBMwITQ9bGF/S6HxuEP3qEnQk=
 			</data>
 		</dict>
 		<key>ScrollableStackViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yBZs+WgARUx8iC+Fzve2jLaKHmCtg25GymsLEFuA6a0=
+			BUoxG/jqa493sUST8ezUVcysyXs9EO3DXguqGtj+rmE=
+			</data>
+		</dict>
+		<key>SearchBarView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tJb23YWBn8woo0VDP/O6DPntD9DCkDtzBU6tgeikwS0=
+			</data>
+		</dict>
+		<key>SearchCategoryTVCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			aYx59uiXRCCY9G01EbgijLJqaxM+kDHRfPC794X35aU=
+			</data>
+		</dict>
+		<key>SearchControlsView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			49PaPIQfiKLPMeoM6EKp6Vx4Aoob9/2UmDVZFqYQMpc=
+			</data>
+		</dict>
+		<key>SearchResultTVCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gqO1WCA8RVLpflPS1tgjEGhLN/cmpOv3LM2OC+qSJd8=
+			</data>
+		</dict>
+		<key>SearchSectionHeaderTVCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YQK4QAHopnk4V0jMIuTEIGbZcosGHhFFZjUeDZUf2lg=
+			</data>
+		</dict>
+		<key>SearchSimpleListingTVCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QQ1iBp0Ayx60UpgBJ8xYGmZdiYWCwy3p2Hj9RKJdQQQ=
+			</data>
+		</dict>
+		<key>SearchViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UolNKUXeLXlG2RriImtQa5yzp/4kf2G2z+UvnJHooiw=
+			</data>
+		</dict>
+		<key>SectionTitleHeaderFooterView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			N6A+UgkA86JUy6kiZTSEVjR1+BFiIswdQIZ7ZaFtYlE=
 			</data>
 		</dict>
 		<key>SectionsHeaderView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sw6ABcE44KioQ0sMrZeMdCnQdM/z/lWtpue7xx2FyVc=
+			rilBuiQai+o4/Qg0+2XYIfVhDBAj+rJAoiYR7YsTVfQ=
 			</data>
+		</dict>
+		<key>SeeAllVideosViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WrgEhcAmL7GRqJ1wUF4yiFwmyRnpcdArocm05tR+Wss=
+			</data>
+		</dict>
+		<key>Settings.bundle/Pods-RANDARulesOfGolf-settings-metadata.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GQenW8OXPfHGQF9sus96sGtZPrU1XEqKE40EssaIQdw=
+			</data>
+		</dict>
+		<key>Settings.bundle/Pods-RANDARulesOfGolfTests-settings-metadata.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GQenW8OXPfHGQF9sus96sGtZPrU1XEqKE40EssaIQdw=
+			</data>
+		</dict>
+		<key>Settings.bundle/Root.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			m26DmegPkB5jwUJkVEtLlObYALX8He100Ny0+NNJg/g=
+			</data>
+		</dict>
+		<key>Settings.bundle/en.lproj/Root.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xUzNd7J7w99oAnMIWGe1dAGArHMuEXwQqxSziDU5vLk=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 		<key>SimpleTVCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uyIUT2jEFYlvHRSpoI9ZDWsoBWijq9Jq2HlYOxawIFM=
+			OTm4e1kJyehY2AAN0IWMTA1g0z1qFOtEpi0vzmtRHmM=
 			</data>
 		</dict>
 		<key>SmallVideoCVCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QFPmpixkDmyP8B4OjBOjblxDU0bqObTzx3H43LNe6Po=
+			t0Hajxy7h8/W5MQ6ED0D3lfj3iRM+r1RZDPYb1av720=
 			</data>
 		</dict>
-		<key>SwitchTVCell.nib</key>
+		<key>TVAppearenceCVCell.nib/objects-14.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yut4In2EsU6d3ZgnWljB1jV/e3IRBjXAO/W48bMrMJo=
+			LViX7Vzvjr/jBG27vuOq6NXDJIosPLzbWGnoEAhFsZs=
 			</data>
 		</dict>
-		<key>TVAppearenceCVCell.nib</key>
+		<key>TVAppearenceCVCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			naim7rNCbzDf/GcpGJOMpP0Gp0vFUVsU5RwJyEHxEYs=
+			LViX7Vzvjr/jBG27vuOq6NXDJIosPLzbWGnoEAhFsZs=
 			</data>
 		</dict>
 		<key>TableViewController_grouped.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5Jds1tFobRhgORq1ZnDUNlub4yBflcE/qhrlyYLbTRU=
+			73DhzHQYaYuqUSp0pQ5MJr55yNQKF19PwgjYecaJMJE=
 			</data>
 		</dict>
 		<key>TableViewController_insetGrouped.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZD01p0hh2BDX/M3nD2JtqOnNm2b9z8af+xXWN3ToxZU=
+			tWKOXscWYPADXg6Ju91mKIgyaB+9O0ZkJNkgALWHhiw=
 			</data>
 		</dict>
 		<key>TableViewController_plain.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rf5/HFEOtduKQ52lbgAbaAT5O5blX18SfWsUBxJWy/8=
+			N66flxvLUfeQcYAPxmu3E/WjR+zkHEmbD5Ovt82/vG8=
 			</data>
 		</dict>
 		<key>TextViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5hyq0sSLUh36UdsUXxeyL7GB0pv8C3Ar2pqVO+L5ZHo=
+			rBlYPBkn59uyNd1plHxFPjmxatFig63GyFl9Fo83JVY=
 			</data>
 		</dict>
 		<key>TitledCRView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1RF3DdPcHTST/BCOMgcc2ZoMb/+G57FB4BhQ1aW/3VI=
+			RfAWwHv2Am6y7uWBY7l8hcc4ukYOeO5WTr8U7Qn+6oY=
+			</data>
+		</dict>
+		<key>VideoPlayerViewController.nib/objects-14.0+.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cafoofv+9H19nsu+31w2+a5BDEaR1K8syyTTNDo3IyU=
+			</data>
+		</dict>
+		<key>VideoPlayerViewController.nib/runtime.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qX87VHgittKbdJQeaDb4wVGzseleKNGOkSJOVl027zY=
+			</data>
+		</dict>
+		<key>VideoThumbnailView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UI/AlH4/kWNXPp+WOz7r2XJQr/wsAgqYeFBkMzfuvhA=
+			</data>
+		</dict>
+		<key>VideosFilterViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5SE2rrqqGBxqtARVcW0IqBxV16bJ5Qto3JJLosaSR+o=
+			</data>
+		</dict>
+		<key>VideosViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1eKy+35/+bQMWfl1hu6cimx3s5D5VOLZcbuavHT48oA=
 			</data>
 		</dict>
 		<key>cs.lproj/Localizable.strings</key>
@@ -820,7 +1390,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vXKkIWq+L/xImldnvd2P5aHxfTxKMZmyXtPR0TkA6sc=
+			eIahzx6KXVbpxT97venHuI0ZLh8v6gpSp6Ftf0wxKVM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -839,6 +1409,15 @@
 			<key>hash2</key>
 			<data>
 			5VvGI0wqMSvu7pqbdl+OdkYN+tML7uAvZgudumT0Ees=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>fr-CA.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rV4lHvfM6va5YUHlVpcNKAZlb6Y1bKEDOXqvTjljyiU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -923,6 +1502,13 @@
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>scaleToFit.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			T9TQgUA0PJ4omAd8uoYdO4JjQ3vPe4pG8rk8K/sObGM=
+			</data>
 		</dict>
 		<key>sv.lproj/Localizable.strings</key>
 		<dict>
